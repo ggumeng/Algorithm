@@ -12,13 +12,17 @@ public class Main {
         // BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(bf.readLine());
 
-        int a = Integer.parseInt((st.nextToken()));
-        int b = Integer.parseInt((st.nextToken()));
+        long a = Integer.parseInt((st.nextToken()));
+        long b = Integer.parseInt((st.nextToken()));
 
-        System.out.println((a+b) * (a-b));
+        System.out.println(solution(a, b));
         
         // bw.flush();
         // bw.close();
+    }
+
+    public static long solution(long a, long b) {
+        return (a+b) * (a-b);
     }
     
 }
