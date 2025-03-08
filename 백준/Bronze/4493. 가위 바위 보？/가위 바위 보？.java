@@ -21,33 +21,14 @@ public class Main {
                 String player1 = st.nextToken();
                 String player2 = st.nextToken();
 
-                if (player1.equals("R")) {
-                    if (player2.equals("R")) {
-                        isWin1++;
-                        isWin2++;
-                    } else if (player2.equals("S")) {
-                        isWin1++;
-                    } else {
-                        isWin2++;
-                    }
-                } else if (player1.equals("S")) {
-                    if (player2.equals("R")) {
-                        isWin2++;
-                    } else if (player2.equals("S")) {
-                        isWin1++;
-                        isWin2++;
-                    } else {
-                        isWin1++;
-                    }
+                if (player1.equals(player2)) continue;
+
+                if (player1.equals("R") && player2.equals("S") 
+                    || player1.equals("S") && player2.equals("P") 
+                    || player1.equals("P") && player2.equals("R")) {
+                    isWin1++;
                 } else {
-                    if (player2.equals("R")) {
-                        isWin1++;
-                    } else if (player2.equals("S")) {
-                        isWin2++;
-                    } else {
-                        isWin1++;
-                        isWin2++;
-                    }
+                    isWin2++;
                 }
             }
 
