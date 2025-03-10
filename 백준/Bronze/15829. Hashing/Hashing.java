@@ -1,4 +1,5 @@
 import java.io.*;
+import java.math.BigInteger;
 import java.util.*;
 
 public class Main {
@@ -10,15 +11,17 @@ public class Main {
         int l = Integer.parseInt(bf.readLine());
         String m = bf.readLine();
 
-        long sum = 0;
+        BigInteger hash = new BigInteger("0");
+        BigInteger r = new BigInteger("31");
+        BigInteger mod = new BigInteger("1234567891");
 
         for (int i=0; i<l; i++) {
-            int alpha = Character.getNumericValue(m.charAt(i)) - 9;
+            BigInteger alpha = BigInteger.valueOf(Character.getNumericValue(m.charAt(i)) - 9);
 
-            sum += alpha * Math.pow(31, i);
+            hash = hash.add(r.pow(i).mod(mod).multiply(alpha));
         }
 
-        System.out.println(sum);
+        System.out.println(hash.mod(mod));
 
         // bw.flush();
         // bw.close();
