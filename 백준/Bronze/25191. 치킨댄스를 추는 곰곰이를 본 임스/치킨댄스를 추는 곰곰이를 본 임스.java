@@ -13,7 +13,7 @@ public class Main {
         int coke = Integer.parseInt(st.nextToken());
         int beer = Integer.parseInt(st.nextToken());
 
-        if (coke / 2 + beer <= chicken) {
+        if (coke / 2 + beer < chicken) {
             System.out.println(coke / 2 + beer);
         } else {
             System.out.println(chicken);
